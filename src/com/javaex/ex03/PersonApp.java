@@ -22,7 +22,7 @@ public class PersonApp {
 
 		List<Person> friend = new ArrayList<Person>();
 
-		String fr = ""; // 이거 왜?
+		String fr = ""; // 이거 왜? --> 밖에서 쓸수도있어서
 		while (true) {
 			// 이렇게 바로 쓰면 안되나? String fr = br.readLine();
 			fr = br.readLine();
@@ -34,9 +34,11 @@ public class PersonApp {
 			// List<String> sList = new ArrayList<String>();
 
 			// sList = Arrays.asList(fr.split(","));
-			String[] pInfo = fr.split(","); // list로 받으면 안되는지?
+			String[] pInfo = fr.split(","); // list로 받으면 안되는지? --> 굳이 복잡하게 안해도 된다 ㅋ
 			/*
-			 * p.setName(sList.get(0)); p.setHp(sList.get(1)); p.setCompany(sList.get(2));
+			 * p.setName(sList.get(0)); 
+			 * p.setHp(sList.get(1)); 
+			 * p.setCompany(sList.get(2));
 			 */
 			Person p = new Person(pInfo[0], pInfo[1], pInfo[2]); // 한번에쓰기
 			// p.setName(pInfo[0]);
@@ -57,7 +59,8 @@ public class PersonApp {
 			System.out.println("회사: " + f.getCompany());
 			System.out.println("");
 		}
-
+		
+		// 파일저장
 		Writer wr = new FileWriter("C:\\javaStudy\\file\\PhoneDB_add.txt");
 		BufferedWriter bw = new BufferedWriter(wr);
 
@@ -67,7 +70,7 @@ public class PersonApp {
 			bw.newLine();
 		}
 
-		// 파일저장
+		
 
 		br.close();
 		bw.close();
